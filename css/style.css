@@ -28,6 +28,7 @@
   --hover-buttons-color: #188ce8;
   --items-color: #f5f4fa;
   --icons-color: #afb1b8;
+  --cubic: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 body {
@@ -102,7 +103,6 @@ ul {
   font-size: 14px;
   line-height: 1.2;
   text-decoration: none;
-  padding: 15 32;
 }
 
 .menu-nav .item {
@@ -125,8 +125,31 @@ ul {
   text-decoration: none;
 }
 
-.menu-nav .link.current {
+.link-current {
   color: var(--accent-color);
+  position: relative;
+  display: block;
+  text-decoration: none;
+}
+.link-current::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  top: 45px;
+
+  display: block;
+  width: 100%;
+  height: 4px;
+  background-color: #188ce8;
+
+  opacity: 0;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.link-current::after {
+  opacity: 1;
+  border-radius: 2px;
 }
 
 /*CONTACTS*/
@@ -215,8 +238,66 @@ ul {
   padding: 10px 32px;
   display: inline-block;
   border: none;
+
+  cursor: pointer;
+}
+.button .touch-transform {
+  transition-property: color, fill, background-color, border, box-shadow,
+    opacity, transform;
+  transition-duration: 250ms;
+  transition-timing-function: var(--cubic);
 }
 
+.backdrop.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+.backdrop {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  opacity: 1;
+  /* transition: opacity 250ms var(--cubic); */
+}
+
+.backdrop.is-hidden .modal {
+  transform: translate(-50%, -50%) scale(0.9);
+}
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 528px;
+  min-height: 581px;
+  padding: 15px;
+  background-color: var(--white-color);
+  box-shadow: 0px 1px 3px rgb(0 0 0 / 12%), 0px 1px 1px rgb(0 0 0 / 14%),
+    0px 2px 1px rgb(0 0 0 / 20%);
+  border-radius: 4px;
+  transform: translate(-50%, -50%) scale(1);
+  /* transition: transform 250ms var(--cubic); */
+}
+
+.modal-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 30px;
+  height: 30px;
+  background-color: var(--white-color);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  margin-top: 8px;
+  margin-right: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
 .button:hover,
 .button:focus {
   background-color: var(--hover-buttons-color);
@@ -252,6 +333,28 @@ ul {
 .feature-list .projects {
   width: 370px;
   margin-right: 30px;
+
+  position: relative;
+  z-index: -1;
+}
+
+.our-work {
+  position: absolute;
+  bottom: 0;
+  width: 370px;
+  height: 70px;
+  background-color: rgba(47, 48, 58, 0.8);
+}
+
+.mobil-design {
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 1.14;
+  text-align: center;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--title-text-color);
+  padding-top: 27px;
 }
 
 .feature-list .projects:nth-child(3n) {

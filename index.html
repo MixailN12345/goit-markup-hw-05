@@ -16,25 +16,25 @@
     <!--шапка сайта-->
     <header class="page-header">
         <!--logo-->
-        <div class="container">
-            <a href="index.html" class="logo">
-                <span class="webstudio">Web</span>Studio
-            </a>
+<div class="container">
+    <a href="index.html" class="logo">
+        <span class="webstudio">Web</span>Studio
+    </a>
 
-            <nav class="navigation">
-                <ul class="menu-nav">
-                    <li class="item"><a href="#" class="link current">Cтудия</a></li>
-                    <li class="item"><a href="./portfolio.html" class="link">Портфолио</a></li>
-                    <li class="item"><a href="#" class="link">Контакты</a></li>
+    <nav class="navigation">
+        <ul class="menu-nav">
+            <li class="item"><a href="#" class="link-current">Cтудия</a></li>
+            <li class="item"><a href="./portfolio.html" class="link">Портфолио</a></li>
+            <li class="item"><a href="#" class="link">Контакты</a></li>
 
-                </ul>
-            </nav>
-            <ul class="contacts">
-                <li class="item">
-                    <a href="mailto:info@devstudio.com" class="contacts-link">
-                <svg class="contacts-mail" width="1rem" height="1rem">
-              <use href="./img-icons/sprite.svg#icon-mail"></use>
-            </svg> info@devstudio.com
+        </ul>
+    </nav>
+    <ul class="contacts">
+        <li class="item">
+             <a href="mailto:info@devstudio.com" class="contacts-link">
+        <svg class="contacts-mail" width="1rem" height="1rem">
+        <use href="./img-icons/sprite.svg#icon-mail"></use>
+    </svg> info@devstudio.com
                     </a>
                 </li>
 
@@ -49,12 +49,26 @@
             </ul>
         </div>
     </header>
+    
     <main>
-        <section class="hero">
+
+    <section class="hero">
 
             <h1 class="hero-title">   Эффективные решения  
 для вашего бизнеса</h1>
-     <button type="button" class="button">Заказать услугу</button>
+     <button class="button touch-transform" type="button" data-modal-open>Заказать услугу</button>
+     <div class="backdrop is-hidden touch-transform">
+ <div class="modal touch-transform">
+       <p>Lorem ipsum dolor sit amet.
+           <button class="modal-button" data-modal-close>
+               <svg width="11px" height="11px">
+                    <use href="./img-icons/sprite.svg#icon-close-black-18dp">
+                   </use>
+               </svg>
+           </button>
+       </p>
+    </div>
+</div>
 </section>
 <!--Особенности-->
 <section class="section">
@@ -90,14 +104,22 @@
 <div class="container">
  <h2 class="works">Чем мы занимаемся</h2>
     <ul class="feature-list">
-     <li class="projects">
-         <img src="./img/box1.jpg" alt="Декстопные приложения" width="370" />
+     <li class="projects gadget">
+         <img src="./img/box1.jpg" alt="Декстопные приложения" width="370"/>
+         <div class="our-work">
+        <h3 class="mobil-design">Десктопные приложения</h3></div>
     </li>
      <li class="projects">
          <img src="./img/box2.jpg" alt="Мобильные приложения" width="370" />
+        <div class="our-work">
+            <h3 class="mobil-design">Мобильные приложения</h3>
+        </div>
         </li>
      <li class="projects">
          <img src="./img/box3.jpg" alt="Дизайнерские решения" width="370" />
+        <div class="our-work">
+            <h3 class="mobil-design">Дизайнерские решения</h3>
+        </div>
         </li>
                 </ul>
             </div>
@@ -374,10 +396,8 @@
          </li>
      </ul>
    </div>
-    
-</div>
-        
-    </footer>
-</body>
-
+         </div>
+        </footer>
+      <script src="./js/modal.js"></script>
+     </body>
 </html>
