@@ -241,12 +241,6 @@ ul {
 
   cursor: pointer;
 }
-.button .touch-transform {
-  transition-property: color, fill, background-color, border, box-shadow,
-    opacity, transform;
-  transition-duration: 250ms;
-  transition-timing-function: var(--cubic);
-}
 
 .backdrop.is-hidden {
   opacity: 0;
@@ -260,7 +254,6 @@ ul {
   height: 100%;
   background: rgba(0, 0, 0, 0.2);
   opacity: 1;
-  /* transition: opacity 250ms var(--cubic); */
 }
 
 .backdrop.is-hidden .modal {
@@ -274,12 +267,17 @@ ul {
   min-width: 528px;
   min-height: 581px;
   padding: 15px;
-  background-color: var(--white-color);
+  background-color: var(--title-text-color);
   box-shadow: 0px 1px 3px rgb(0 0 0 / 12%), 0px 1px 1px rgb(0 0 0 / 14%),
     0px 2px 1px rgb(0 0 0 / 20%);
   border-radius: 4px;
   transform: translate(-50%, -50%) scale(1);
-  /* transition: transform 250ms var(--cubic); */
+}
+.touch {
+  transition-property: color, fill, background-color, border, box-shadow,
+    opacity, transform;
+  transition-duration: 250ms;
+  transition-timing-function: var(--cubic);
 }
 
 .modal-button {
