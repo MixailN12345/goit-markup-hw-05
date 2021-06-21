@@ -184,10 +184,13 @@ ul {
   border-radius: 4px;
   padding: 6px 6px;
   cursor: pointer;
-  transition-property: background-color, color, box-shadow;
+  transition-property: background-color, color;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
 }
+
 .buttonLink:hover,
 .buttonLink:focus {
   color: var(--title-text-color);
@@ -221,16 +224,11 @@ ul {
   transform: translateY(100%);
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.overlay-portfolio:hover .project-overlay {
+/* .overlay-portfolio:hover,
+.overlay-portfolio:focus .project-overlay {
   transform: translatey(0);
-}
-.border-flex:hover,
-.border-flex:focus {
-  outline: 1px solid var(--outline-color);
-  background: var(--title-text-color);
-  box-shadow: var(--box-shadow);
-  cursor: pointer;
-}
+} */
+
 .overlay-text {
   position: absolute;
   transform: translate(-50%, -50%);
@@ -246,9 +244,9 @@ ul {
   font-size: 18px;
   line-height: 1.56;
 }
-.overlay-portfolio:hover .project-overlay {
+/* .overlay-portfolio:hover .project-overlay {
   transform: translateY(0);
-}
+} */
 .container-flex {
   justify-content: center;
   display: flex;
@@ -268,21 +266,6 @@ ul {
   margin-right: 0;
   margin-top: 30px;
 }
-.container-flex > li:hover {
-  box-shadow: 0px 1px 1px rgb(0 0 0 / 12%), 0px 4px 4px rgb(0 0 0 / 6%),
-    1px 4px 6px rgb(0 0 0 / 16%);
-  cursor: pointer;
-}
-.container-flex > li:hover {
-  box-shadow: 0px 1px 1px rgb(0 0 0 / 12%), 0px 4px 4px rgb(0 0 0 / 6%),
-    1px 4px 6px rgb(0 0 0 / 16%);
-}
-
-/*section*/
-/* .section-title {
-  text-decoration: none;
-  display: block;
-} */
 
 li {
   list-style: none;
@@ -310,7 +293,17 @@ a {
   text-decoration: none;
 }
 .thumb:hover .project-overlay {
+  cursor: pointer;
   transform: translateY(0);
+  box-shadow: 0px 1px 1px rgb(0 0 0 / 12%), 0px 4px 4px rgb(0 0 0 / 6%),
+    1px 4px 6px rgb(0 0 0 / 16%);
+}
+.thumb:focus .project-overlay {
+  cursor: pointer;
+  transform: translateY(0);
+  box-shadow: 0px 1px 1px rgb(0 0 0 / 12%), 0px 4px 4px rgb(0 0 0 / 6%),
+    1px 4px 6px rgb(0 0 0 / 16%);
+  animation: var(--box-shadow);
 }
 .listen {
   display: block;
