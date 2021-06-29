@@ -19,6 +19,7 @@
   --border-listen-color: #eeeeee;
   --icons-color: #afb1b8;
   --hover-icons: #188ce8;
+  --btn-color: #f5f4fa;
 }
 body {
   background-color: var(--title-text-color);
@@ -155,7 +156,7 @@ ul {
 .contacts-list:focus {
   color: var(--accent-color);
 }
-.button {
+/* .button {
   font-style: normal;
   font-weight: 500;
   color: var(--title-text-color);
@@ -170,10 +171,14 @@ ul {
   min-width: 73px;
   margin: 0;
   border: none;
+} */
+.btn {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
 }
 
 .buttonLink {
-  border: var(--title-text-color);
   font-style: normal;
   font-weight: bold;
   font-size: 16px;
@@ -181,25 +186,27 @@ ul {
   text-align: center;
   letter-spacing: 0.03em;
   color: var(--primary-text-color);
+  background-color: var(--btn-color);
   border-radius: 4px;
-  padding: 6px 6px;
-  cursor: pointer;
-  transition-property: background-color, color;
+  transition-property: background-color, color, box-shadow;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
-    0px 2px 2px rgba(0, 0, 0, 0.12);
+
+  box-sizing: border-box;
+  min-width: 73px;
+  padding: 6px 22px;
+  border: 0px solid transparent;
+  font-family: inherit;
+  font-weight: 500;
+  cursor: pointer;
 }
 
 .buttonLink:hover,
 .buttonLink:focus {
   color: var(--title-text-color);
   background-color: var(--accent-color);
-}
-.btn {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 56px;
+  box-shadow: 0px 3px 1px rgb(0 0 0 / 10%), 0px 1px 2px rgb(0 0 0 / 8%),
+    0px 2px 2px rgb(0 0 0 / 12%);
 }
 
 .btn > li:nth-child(-n + 4) {
@@ -292,18 +299,24 @@ p {
 a {
   text-decoration: none;
 }
+
 .thumb:hover .project-overlay {
   cursor: pointer;
   transform: translateY(0);
-  box-shadow: 0px 1px 1px rgb(0 0 0 / 12%), 0px 4px 4px rgb(0 0 0 / 6%),
+  opacity: 0px 1px 1px rgb(0 0 0 / 12%), 0px 4px 4px rgb(0 0 0 / 6%),
     1px 4px 6px rgb(0 0 0 / 16%);
 }
 .thumb:focus .project-overlay {
   cursor: pointer;
   transform: translateY(0);
-  box-shadow: 0px 1px 1px rgb(0 0 0 / 12%), 0px 4px 4px rgb(0 0 0 / 6%),
+  opacity: 0px 1px 1px rgb(0 0 0 / 12%), 0px 4px 4px rgb(0 0 0 / 6%),
     1px 4px 6px rgb(0 0 0 / 16%);
   animation: var(--box-shadow);
+}
+.border-flex:hover,
+.border-flex:focus {
+  box-shadow: 0px 1px 1px rgb(0 0 0 / 12%), 0px 4px 4px rgb(0 0 0 / 6%),
+    1px 4px 6px rgb(0 0 0 / 16%);
 }
 .listen {
   display: block;
